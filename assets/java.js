@@ -20,8 +20,8 @@ var config = {
   
   var database = firebase.database();
   
-  // 2. Button for adding Employees
-  $("#add-employee-btn").on("click", function(event) {
+  // 2. Button for adding trains
+  $("#add-train-btn").on("click", function(event) {
     event.preventDefault();
   
     // Grabs user input
