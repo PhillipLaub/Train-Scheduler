@@ -27,8 +27,23 @@ var config = {
     // Grabs user input
     var trainName = $("#train-name-input").val().trim();
     var dest = $("#dest-input").val().trim();
-    var trainStart = moment($("#start-input").val().trim(), "MM/DD/YYYY").format("X");
+    var trainStart = moment($("#start-input").val().trim(), "HH:mm").format("X");
     var freq = $("#freq-input").val().trim();
+
+
+
+
+    // var randomDate = "23:01";
+    // var defaultFormat = "HH:mm";
+    // var convertedDate = moment(trainStart, defaultFormat);
+    // console.log(convertedDate.format("HH:mm"));
+    // console.log(convertedDate.format("X"));
+    // var newDate = moment("24:00", defaultFormat);
+    // console.log(convertedDate.diff(newDate, "minutes"));
+    // var difference = (convertedDate.diff(newDate, "minutes"));
+
+
+
   
     // Creates local "temporary" object for holding employee data
     var newTrain = {
@@ -73,15 +88,15 @@ var config = {
     console.log("Frequency: " + freq + " minutes");
   
     // Prettify the employee start
-    var trainStartPretty = moment.unix(trainStart).format("MM/DD/YYYY");
+    var trainStartPretty = moment.unix(trainStart).format("HH:mm");
   
     // Calculate the months worked using hardcore math
     // To calculate the months worked
-    var empMonths = moment().diff(moment(trainStart, "X"), "months");
-    console.log(empMonths);
+    var trainMins = moment().diff(moment(trainStart, "X"), "minutes");
+    console.log("Train Mins: " + trainMins);
   
     // Calculate the total billed r ate
-    var empBilled = empMonths * freq;
+    var empBilled = trainMins * freq;
     console.log(empBilled);
   
     // Create the new row
@@ -90,7 +105,7 @@ var config = {
       $("<td>").text(dest),
       $("<td>").text(freq),
       $("<td>").text(trainStartPretty),
-      $("<td>").text(empMonths)
+      $("<td>").text(trainMins)
     );
   
     // Append the new row to the table
