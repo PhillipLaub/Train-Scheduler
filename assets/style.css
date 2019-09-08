@@ -4,7 +4,8 @@
       width: 16.575%;
     } */
 
-
-    h1 {
-        color:red;
-    }
+.card-header {
+  background: black;
+  color:white;
+  font-size:20px;
+}

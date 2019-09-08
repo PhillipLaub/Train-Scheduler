@@ -1,4 +1,3 @@
-
 var config = {
   apiKey: "AIzaSyDNlBiI-uAQtBfYmZMeFrbns_b3VNCTsa8",
   authDomain: "trains-a62df.firebaseapp.com",
@@ -8,7 +7,6 @@ var config = {
 
 firebase.initializeApp(config);
 var database = firebase.database();
-
 
 var currentTime = moment().format();
 console.log("Current Time: " + currentTime);
@@ -24,8 +22,13 @@ $("#add-train-btn").on("click", function() {
     .val()
     .trim();
 
-  var trainTimeInput = moment($("#trainTime-input").val().trim(),"HH:mm").format("HH:mm");
-  
+  var trainTimeInput = moment(
+    $("#trainTime-input")
+      .val()
+      .trim(),
+    "HH:mm"
+  ).format("HH:mm");
+
   var frequencyInput = $("#frequency-input")
     .val()
     .trim();
@@ -52,9 +55,7 @@ $("#add-train-btn").on("click", function() {
   $("#frequency-input").val("");
 });
 
-
 database.ref().on("child_added", function(childSnapshot, prevChildKey) {
-
   var trainName = childSnapshot.val().train;
   var trainDestination = childSnapshot.val().destination;
   var trainTime = childSnapshot.val().firstTrain;
@@ -75,7 +76,6 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
     .add(minutesAway, "minutes")
     .format("hh:mm A");
   console.log("Next Arrival: " + nextArrival);
-
 
   var newRow = $("<tr>").append(
     $("<td>").text(trainName),
