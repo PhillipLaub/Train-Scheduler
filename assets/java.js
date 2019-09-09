@@ -16,11 +16,11 @@ $("#add-train-btn").on("click", function() {
 
   var trainNameInput = $("#trainName-input")
     .val()
-    .trim();
+    .trim().toUpperCase();
 
   var destinationInput = $("#destination-input")
     .val()
-    .trim();
+    .trim().toUpperCase();
 
   var trainTimeInput = moment(
     $("#trainTime-input")
