@@ -1,8 +1,19 @@
 
+@font-face {
+  font-family: Solariimport;
+  src: url("Solari.ttf");
+}
+
+body {
+  height:100vh;
+}
+
+.container {
+  max-height: 100vh;
+}
 .card-header {
   background: black;
   color:white;
-  font-size:20px;
   font-family: 'Cinzel', serif;
 }
 
@@ -11,20 +22,33 @@
   color:black;
 }
 
+.cross-img {
+  text-align:center;
+}
+
+.center {
+  text-align:center;
+}
+
 body {
   background-image: url("./images/background1.jpg");
   
 }
 
-@font-face {
-  font-family: Solariimport;
-  src: url("Solari.ttf");
+.title {
+  background:white;
+  padding: 1%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border:5px solid black;
+    border-radius:15px;
 }
+
 
 h1 {
   font-family: Solariimport;
-  font-size:80px;
-  padding-top:10px;
+  margin-left: auto;
+    margin-right: auto;
 }
 
 .jumbotron {
@@ -33,30 +57,16 @@ h1 {
 
 td {
   font-family: Solariimport;
-  font-size: 25px;
 }
 
-th {
-  font-size:20px;
-}
-
-.jumbotron {
-  padding:2px;
-  margin-top:5px;
-}
 
 .row {
   opacity:0.92;
 }
 
-img {
-  height:100px;
-  padding-left:8px;
-  padding-right:8px;
-}
+
 
 label {
   color:black;
   opacity:1;
-  font-size:20px;
 }
